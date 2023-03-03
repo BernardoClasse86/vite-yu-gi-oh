@@ -22,7 +22,7 @@ export default {
     methods: {
         fetchCards() {
             axios
-                .get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+                .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
                 .then((res) => {
                     // console.log(res)
                     // console.log(res.data)
@@ -61,6 +61,5 @@ export default {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
-    row-gap: 1rem;
 }
 </style>

@@ -26,16 +26,23 @@ export default {
 
 .card {
     text-align: center;
-    border: 2px solid grey;
+    background-image: url(/images/yu-gi-oh-card-back.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     row-gap: 0.75rem;
+    box-shadow: 0 0 5px 5px $card-text;
 
     img {
-        aspect-ratio: 1;
         object-fit: contain;
+        cursor: pointer;
+    }
+
+    img:hover {
+        box-shadow: 0 0 5px 5px $gold-shadow;
     }
 
     .card__title {
@@ -43,8 +50,9 @@ export default {
         color: black;
         font-weight: bold;
         padding: 0.5rem;
-        background-color: burlywood;
-        border: 1px solid brown;
+        box-shadow: 0 0 5px 5px white;
+        background-color: $card__title-bg;
+        border: 3px solid $card-text;
         margin: 0 1rem;
     }
 
@@ -54,8 +62,10 @@ export default {
         font-weight: bold;
         padding: 1rem;
         margin: 0 1.5rem;
-        background-color: aqua;
-        border: 1px solid aquamarine;
+        color: black;
+        box-shadow: 0 0 5px 5px white;
+        background-color: $card__text-bg;
+        border: 2px solid $card-text;
     }
 }
 </style>

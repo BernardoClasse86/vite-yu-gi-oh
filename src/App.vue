@@ -12,19 +12,31 @@ export default {
 </script>
 
 <template>
-  <header>
+  <div class="bg">
 
-    <AppHeader />
+    <header>
 
-  </header>
+      <AppHeader />
 
-  <main>
+    </header>
 
-    <AppMain />
+    <main>
 
-  </main>
+      <AppMain />
+
+    </main>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 @use './style/generals.scss';
+@use './style/partials/reset' as *;
+
+
+.bg {
+  background-image: url(/images/main-bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 </style>
