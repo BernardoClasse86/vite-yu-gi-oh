@@ -34,9 +34,9 @@ export default {
 
 
 .bg {
-  background-image: url(/images/main-bg.png);
-  background-position: center;
-  background-size: cover;
+  background-image: url(/images/mainbg.jpg);
+  background-position: top;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 </style>

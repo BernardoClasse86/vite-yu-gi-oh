@@ -26,7 +26,7 @@ export default {
     gap: 2rem;
     align-items: center;
     padding: 1rem 0;
-    box-shadow: 0 -7px 3px -3px rgb(255, 217, 105), 0 7px 3px -3px rgb(255, 217, 105);
+    box-shadow: 0 -7px 3px -3px $title-shadow, 0 7px 3px -3px $title-shadow;
 
     .logo-thumb {
         width: 200px;
@@ -37,7 +37,7 @@ export default {
         font-style: italic;
         color: white;
         font-weight: bolder;
-        text-shadow: 2px 2px 8px $gold-shadow;
+        text-shadow: 2px 2px 8px $title-shadow;
     }
 }
 </style>
