@@ -1,12 +1,13 @@
 <script>
 import axios from 'axios'
 import MainCard from './MainCard.vue'
+import Filters from './Filters.vue'
 import store from '../store'
 
 export default {
     components: {
         MainCard,
-
+        Filters,
     },
     data() {
         return {
@@ -21,8 +22,15 @@ export default {
     },
     methods: {
         fetchCards() {
+
+            const searchName = this.store.cardNameSearch
+            console.log('name search =', searchName)
             axios
-                .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=40&offset=0')
+                .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=500&offset=0', {
+                    params: {
+                        fname: searchName
+                    }
+                })
                 .then((res) => {
                     // console.log(res)
                     // console.log(res.data)
@@ -43,6 +51,8 @@ export default {
 
 <template>
     <div class="container">
+
+        <Filters @onSearchName="fetchCards" />
 
         <ul class="card-grid">
 
