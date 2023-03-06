@@ -22,13 +22,16 @@ export default {
     },
     methods: {
         fetchCards() {
-
+            const cardDisplayed = this.displayCards
+            const selectType = this.store.cardTypeSelect
             const searchName = this.store.cardNameSearch
             console.log('name search =', searchName)
+            console.log('card type =', selectType)
             axios
-                .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=500&offset=0', {
+                .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?', {
                     params: {
-                        fname: searchName
+                        fname: searchName,
+                        type: selectType
                     }
                 })
                 .then((res) => {
@@ -52,11 +55,11 @@ export default {
 <template>
     <div class="container">
 
-        <Filters @onSearchName="fetchCards" />
+        <Filters @onSearchName="fetchCards" @onOptionChange="fetchCards" />
 
         <ul class="card-grid">
 
-            <MainCard v-for="card in store.cards" :key="card.id" :card="card" />
+            <MainCard v-for=" card in store.cards" :key="card.id" :card="card" />
 
         </ul>
     </div>

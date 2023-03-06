@@ -3,7 +3,7 @@ import { reactive } from 'vue'
 const store = reactive({
     cards: [],
     cardNameSearch: '',
-    cardArchtypeSelect: '',
+    cardTypeSelect: 'EFFECT MONSTER',
 })
 
 export default store
